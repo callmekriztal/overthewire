@@ -156,4 +156,25 @@ tar -xvf data5.bin
 
 lvl 13
 
-thiss level don't need a password 
+thiss level don't need a password to enter 14
+we used
+ ssh bandit14@localhost -p 2220 -i sshkey.private
+ -i(identifier) says we don't have a password but private key
+
+entered lvl 14 
+
+ then cat /etc/bandit_pass/bandit14
+ got the password for 14
+
+ lvl 14
+
+used 
+nc localhost 30000
+it ask for teh lvl 14 pswd 
+entered the password
+
+nc stands for
+
+got the password for lvl 15
+
+lvl 15
