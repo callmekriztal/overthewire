@@ -1,14 +1,17 @@
 Login:
+echo PASSWORD > X
 
+sshpass -p $(cat X) ssh banditX@bandit.labs.overthewire.org -p 2220
+This command first saves the word PASSWORD into a file named X. Then, sshpass reads that password from the file ($(cat X)) and uses it to provide the password non-interactively when connecting via SSH. Finally, it connects to the remote server as user banditX on host bandit.labs.overthewire.org using port 2220.
 
-lvl 1- ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
+lvl 1
 
 special symbol -
 
 can be read using ./
 ie. cat ./-
 
-lvl 2- 263JGJPfgU6LtdEvgfWU1XP5yac29fFx
+lvl 2
 
 having spaces
 --spaces in this filename--
@@ -21,7 +24,7 @@ we need to use ./
 By prefixing with ./, you explicitly tell the shell: “This is a file in the current directory.”
 cat ./--spaces\ in\ this\ filename--
 
-lvl 3- MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx
+lvl 3
 
 stored in inhere directory
 cd inhere
@@ -30,7 +33,7 @@ used ls -a
 saw ...Hiding-From-You
 cat ...Hiding-From-You
 
-lvl 4- 2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ
+lvl 4
 
 file is in human readable form
 we can cat every file but it is time consuming so
@@ -38,7 +41,7 @@ used bash script
 for i in $(ls); do file ./$i; done
 hence found that -file07 has the password
 
-lvl 5- 4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw
+lvl 
 
 hints size 1033 bytes human readable
 we can do it manually by using recursive listing
@@ -49,7 +52,7 @@ find . -readable -size 1033c ! -executable
 . stands for current directory
 c stands for bytes
 
-lvl 6- HWasnPhtq9AVKe0dmk45nxy20cvUa6EG
+lvl 6
 
 owned by user bandit7
 owned by group bandit6
@@ -62,7 +65,7 @@ find / -user bandit7 -group bandit6 -size 33c 2>/dev/null
 
 cat /var/lib/dpkg/info/bandit7.password
 
-lvl 7- morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj
+lvl 7
 
 password in data.text next to the word millionth
 used
@@ -75,6 +78,82 @@ grep will take the output of the cat data.text and find the word millionth
 
 millionth dfwvzFQi4mU0wfNbFOe9RoWskMLg7eE
 
-lvl 8-dfwvzFQi4mU0wfNbFOe9RoWskMLg7eE
+lvl 8
+ 
+password is stored in data.txt it' occcurance is only once 
+used wc -l data.txt
+1001 lines 
+sorted by using 
+cat data.txt | sort
 
+found the unique by 
 
+cat data.txt | sort | uniq -c 
+-c stands for count
+
+lvl 9
+
+password is stored in data.txt it's a human readable string 
+preceeded by several '=' characters
+
+used
+strings data.txt
+showed the human readable strings 
+
+used
+strings data.txt | grep '='
+
+lvl 10
+
+password is stored in data.txt it's a base 64 encoding 
+confirmed the encoding by seeing
+"==" in the end of code
+
+used
+cat data.txt | base64 -d 
+-d stands for decode
+
+got the password
+
+lvl 11
+
+password is stored in data.txt
+rot13 algo is applied to the password
+
+decoded using rot13.com
+
+lvl 12
+
+data.txt the file is in hexdump format
+/tmp already exist
+cd /temp
+made kriz dir
+cp data.txt /temp/kriz
+
+xxd used for generating hexdumb
+xxd -r used for reversing hexdumb
+
+cat data.txt | xxd -r > hexdump
+
+file hexdump 
+showed it is a gzip file
+
+repeat this for every gz files
+changed file name
+mv hexdump hexdump.gz
+extracted by using 
+gzip -d hexdump.gz
+it is extracted as hexdump
+
+similarly for bz2 files
+do all the same steps with some cavets
+use 
+bzip2 -d hexdump.bz2
+
+similarly for tar files
+use 
+tar -xvf data5.bin
+
+lvl 13
+
+thiss level don't need a password 
