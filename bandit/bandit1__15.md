@@ -178,3 +178,13 @@ nc stands for
 got the password for lvl 15
 
 lvl 15
+
+ pass= lvl 14 pass 
+ openssl s_client -connect localhost:30001
+
+ openssl s_client -connect localhost:30001 is a command that opens a TLS/SSL connection from your machine to a server running on localhost at port 30001, letting you inspect and debug the handshake.
+
+ s_client: A diagnostic tool in OpenSSL used to connect to SSL/TLS services and show details of the handshake, certificate, and encryption.
+
+ entered the pass
+ got the password for lvl 16
