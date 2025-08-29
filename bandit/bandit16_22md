@@ -83,5 +83,40 @@ Instead, it runs with the owner’s privileges (bandit20).
 So the program runs as if bandit20 is executing it.
 
 lvl 20
+my explanation 
+Here in lvl 20 we have a suconnect file which is a setuid  
+when executed with a port number it connects to the localhost
 
+opened another terminal logged into 20
+made a connection to localhost 2222
+by
+nc -lvp 2222
+
+we did
+./suconnect 2222
+
+gave password in nc terminal 
+
+got the password for 21th 
+
+for refernce gpt version
+In Bandit level 20, we use the suconnect binary, which connects to a port on localhost.
+We need two terminals logged in as Bandit20.
+In the first terminal, start a listener with:
+nc -lvp 4242
+pasted pass 20
+Then in the second terminal run
+./suconnect 4242
+If the password is correct, the Bandit21 password will appear in the first terminal
+
+note :
+my doubt 
+it is listening means it's the sever then normaly we give password through client,why server here
+The binary suconnect is written so that it always acts like a client. It connects to a port you specify.
+
+Since suconnect can’t be changed, we must create the server (listener) ourselves to accept its connection.
+
+That’s why we run nc -lvp <port> — to make our terminal act as the server.
+
+lvl 21
 
