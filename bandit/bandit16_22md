@@ -120,3 +120,34 @@ That’s why we run nc -lvp <port> — to make our terminal act as the server.
 
 lvl 21
 
+in this level we got a cron file 
+
+stored in /etc/cron.d
+we then got a cronjob_bandit22 file
+cat it got a sh file
+cat it
+understood that pass for 22 is stored as somr /tmp/X
+
+cat it 
+got the  pass 
+
+lvl 22
+
+same
+
+upto ssh files 
+we prompted according to the sh script
+#!/bin/bash
+
+myname=$(whoami)
+mytarget=$(echo I am user $myname | md5sum | cut -d ' ' -f 1)
+
+echo "Copying passwordfile /etc/bandit_pass/$myname to /tmp/$mytarget"
+
+gave 
+myname=bandit23
+echo I am user bandit23 | md5sum | cut -d ' ' -f 1
+got a file call it Z
+then as per the script
+did 
+cat /tmp/Z
