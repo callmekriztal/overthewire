@@ -60,12 +60,35 @@ we need to clone a github repo and cat the readme
 
 made a temp folder using 
 mktemp -d
- git clone  ssh://bandit27-git@localhost:2220/home/bandit27-git/repo
+git clone  ssh://bandit27-git@localhost:2220/home/bandit27-git
+repo
 
- entered the password for 27
- cd repo 
- cat README
- got the password
+entered the password for 27
+cd repo 
+cat README
+got the password
 
 lvl 28
+
+same stuff 
+here the password is hidden we need to find it
+
+used 
+git log
+
+there was a commit "add missing data"
+
+git checkout <commit_value>
+
+then cat README.md 
+got the password
+
+lvl 29
+
+same things
+but checkout to a branch named dev
+cat README.md
+got the password for lvl 30
+
+lvl 30
 
