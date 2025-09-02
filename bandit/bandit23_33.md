@@ -60,7 +60,7 @@ we need to clone a github repo and cat the readme
 
 made a temp folder using 
 mktemp -d
-git clone  ssh://bandit27-git@localhost:2220/home/bandit27-git
+git clone  ssh://bandit27-git@localhost:2220/home/bandit27-git/repo
 repo
 
 entered the password for 27
@@ -91,4 +91,44 @@ cat README.md
 got the password for lvl 30
 
 lvl 30
+
+same things upto cloning 
+then we have nothing inside the README.md 
+
+find the a tag was in the git folder
+used git tag
+showed
+secret
+used 
+git show secret 
+got password for 31
+
+lvl 31
+
+same things upto cloning 
+we need to have a key.txt file with May I come in? as comtent in repo
+it was tracked by .gitignore removed .gitignore
+rm .gitignore
+made a key.txt with req content
+echo 'May I come in?' > key.txt
+git add key.txt
+git commit -m "XXXX
+git push 
+got the password for lvl 32
+
+lvl 32
+
+This level uses bourne shell
+browsed about it
+
+>> $0
+$ ls
+uppershell
+$ which bash
+/usr/bin/bash
+$ cat /etc/bandit_pass/bandit33
+
+lvl 33 
+
+finally finished :)
 
