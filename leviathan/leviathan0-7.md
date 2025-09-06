@@ -53,7 +53,9 @@ touch 'file;bash'
 this means that whenever we do the cat 
 when we do cat file it will cat the file and encounter the ; and escalates to next level
 
-escalated to next level shell
+escalated to next level shell(why? printfile was a setuid file so it have the ownership of leviathan 3)
 did cat /etc/leviathan_pass/leviathan3
+
+got the password for lvl3
 
 lvl3
