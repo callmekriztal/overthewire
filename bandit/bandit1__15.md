@@ -41,16 +41,24 @@ used bash script
 for i in $(ls); do file ./$i; done
 hence found that -file07 has the password
 
-lvl 
+lvl5
 
 hints size 1033 bytes human readable
 we can do it manually by using recursive listing
 that is ls -R or ls -alR(gives all details of directories and files inside it)
 
 used
+
 find . -readable -size 1033c ! -executable
+
 . stands for current directory
-c stands for bytes
+
+-readable stands for files i can read ie, -rw-r--r-- or similar
+
+c stands for bytes 
+
+! -executable means it should be an executable file ie, there shouldn't be x in file permission
+
 
 lvl 6
 
